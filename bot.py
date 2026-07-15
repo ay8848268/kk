@@ -19,9 +19,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if GEMINI_API_KEY:
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        # Using 1.5-flash which is free and fast
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        logger.info("Gemini AI configured successfully.")
+        # Using gemini-pro which is highly stable and supported everywhere
+        model = genai.GenerativeModel("gemini-pro")
+        logger.info("Gemini AI (gemini-pro) configured successfully.")
     except Exception as e:
         logger.error(f"Gemini Config Error: {e}")
         model = None
